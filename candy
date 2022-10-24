@@ -1,0 +1,132 @@
+--Most popular Halloween Candy:
+
+SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  ORDER BY winpercent DESC
+  
+  --Least popular Halloween Candy
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  ORDER BY winpercent 
+  
+  --Most popular Halloween Candy that contains chocolate:
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE chocolate = '1'
+  ORDER BY winpercent DESC
+  
+  *All of the top 10 candies contains chocolate*
+  
+  --On the least popular candy, all of the bottom 10 candies didn't contain chocolate.
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE chocolate = '0'
+  ORDER BY winpercent 
+  
+  
+  --Analyzing other ingredients against top 10 most popular candies:
+  
+  -Caramel:
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE caramel = '1'
+  ORDER BY winpercent DESC
+  
+  *Twix, Snickers and Milkyway were on top 10*
+  
+  -Fruity:
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE fruity = '1'
+  ORDER BY winpercent DESC
+  
+  *None made it to top 10*
+  
+  -Peanuts/almonds:
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE peanutyalmondy = '1'
+  ORDER BY winpercent DESC
+  
+  *Reeses Peanut Butter cup, Reeses Miniatures, Snickers, Reeses pieces, Reeses stuffed with pieces, Peanut butter M&Ms and Nestle Butterfinger 
+  all were included on TOP 10 list. That's 7 out of 10*
+  
+  -Nougat:
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE nougat = '1'
+  ORDER BY winpercent DESC
+  
+  *Snickers and Milky Way were on Top 10*
+  
+  -Crispy wafers
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE crispedricewafer = '1'
+  ORDER BY winpercent DESC
+  
+  *Twix and KitKat were on Top 10*
+  
+  
+  --It's safe to say that chocolate and peanuts/almonds seems to be the favorite ingredients.
+  
+  
+  --Most sugary candies, order by popularity
+  
+  SELECT TOP 10 competitorname, sugarpercent, winpercent
+  FROM candy
+  ORDER BY sugarpercent DESC, winpercent DESC
+  
+  *More sugar doesn't necessarily means more popularity. Reese's stuffed with pieces and Milky Way are the only ones that made it to both lists*
+  
+  
+  --HardCandies vs soft candies:
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE hard = '1'
+  ORDER BY winpercent DESC
+  
+  SELECT TOP 10 competitorname, winpercent
+  FROM candy
+  WHERE hard = '0'
+  ORDER BY winpercent DESC
+  
+  *Soft candies seem to be strongley preferred than hard candies*
+  
+  
+  --Top costly candies:
+  
+  SELECT TOP 10 competitorname, pricepercent, winpercent
+  FROM candy
+  ORDER BY pricepercent DESC, winpercent DESC
+  
+  *The none of the most costly candies made to top 10*
+  
+  --Is price a factor?
+  
+  SELECT TOP 10 competitorname, pricepercent, winpercent
+  FROM candy
+  ORDER BY pricepercent, winpercent DESC
+  
+  *Not really. The less expensive candies didn't make to top 10*
+  
+  CONCLUSIONS:
+  
+  --Favorite candies contains chocolate and peanuts/almonds
+  
+  --There is a strong preference in soft candies
+  
+  --More sugar doesn't necessarily means a favorite candy
+  
+  --Cost doesn't have much of an impact in preference
+  
+  
+  
+  
