@@ -4,11 +4,37 @@ SELECT TOP 10 competitorname, winpercent
   FROM candy
   ORDER BY winpercent DESC
   
+  competitorname	                    winpercent
+Reeses Peanut Butter cup	              84.18029
+Reeses Miniatures	                      81.866257
+Twix	                                  81.642914
+Kit Kat	                                76.7686
+Snickers	                              76.673782
+Reeses pieces	                          73.43499
+Milky Way	                              73.099556
+Reeses stuffed with pieces	            72.887901
+Peanut butter M&Ms	                    71.46505
+Nestle Butterfinger	                    70.735641
+  
+  
   --Least popular Halloween Candy
   
   SELECT TOP 10 competitorname, winpercent
   FROM candy
   ORDER BY winpercent 
+  
+  competitorname	                    winpercent
+Nik L Nip	                            22.445341
+Boston Baked Beans	                  23.417824
+Chiclets	                            24.524988
+Super Bubble	                        27.303865
+Jawbusters	                          28.127439
+Root Beer Barrels	                    29.703691
+Sugar Daddy	                          32.230995
+One dime	                            32.261086
+Sugar Babies	                        33.43755
+Haribo Happy Cola	                    34.158958
+  
   
   --Most popular Halloween Candy that contains chocolate:
   
@@ -17,6 +43,18 @@ SELECT TOP 10 competitorname, winpercent
   WHERE chocolate = '1'
   ORDER BY winpercent DESC
   
+  competitorname	                    winpercent
+Reeses Peanut Butter cup	            84.18029
+Reeses Miniatures	                    81.866257
+Twix	                                81.642914
+Kit Kat	                              76.7686
+Snickers	                            76.673782
+Reesse pieces	                        73.43499
+Milky Way	                            73.099556
+Reeses stuffed with pieces	          72.887901
+Peanut butter M&M	                    71.46505
+Nestle Butterfinger	                  70.735641
+
   *All of the top 10 candies contains chocolate*
   
   --On the least popular candy, all of the bottom 10 candies didn't contain chocolate.
@@ -26,6 +64,17 @@ SELECT TOP 10 competitorname, winpercent
   WHERE chocolate = '0'
   ORDER BY winpercent 
   
+  competitorname	                      winpercent
+Nik L Nip	                              22.445341
+Boston Baked Beans	                    23.417824
+Chiclets	                              24.524988
+Super Bubble	                          27.303865
+Jawbusters	                            28.127439
+Root Beer Barrels	                      29.703691
+Sugar Daddy	                            32.230995
+One dime	                              32.261086
+Sugar Babies	                          33.43755
+Haribo Happy Cola	                      34.158958
   
   --Analyzing other ingredients against top 10 most popular candies:
   
